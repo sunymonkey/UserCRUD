@@ -13,7 +13,7 @@ public class UserDao {
     private static final String FIND_NAME_USER_QUERY = "SELECT * FROM users WHERE username = ?";
     private static final String FIND_EMAIL_USER_QUERY = "SELECT * FROM users WHERE email = ?";
     private static final String FIND_ALL_USER_QUERY = "SELECT * FROM users";
-    private static final String UPDATE_USER_QUERY = "UPDATE users SET email = ?, username = ?, password = ? WHERE id = ?";
+    private static final String UPDATE_USER_QUERY = "UPDATE users SET email = ?, username = ? WHERE id = ?";
     private static final String DELETE_USER_QUERY = "DELETE FROM users WHERE id = ?";
 
     public void create(User user) {
@@ -58,9 +58,9 @@ public class UserDao {
             PreparedStatement prepStmt = connection.prepareStatement(UPDATE_USER_QUERY);
             prepStmt.setString(1, user.getEmail());
             prepStmt.setString(2, user.getUserName());
-            String password = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-            prepStmt.setString(3, password);
-            prepStmt.setInt(4, user.getId());
+//            String password = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+//            prepStmt.setString(3, password);
+            prepStmt.setInt(3, user.getId());
             prepStmt.executeUpdate();
             return true;
         } catch (SQLException throwables) {

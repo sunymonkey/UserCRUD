@@ -53,40 +53,29 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">UserCRUD</h1>
-                    <a href="/user/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Dodaj użyszkownika</a>
+                    <a href="/user/list" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Lista użytkowników</a>
                 </div>
 
                 <div class="shadow-lg p-3 mb-5 bg-white rounded">
                     <div class="card-header-tabs">
-                        <h5>Lista użyszkowników</h5></div>
-
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Akcja</th>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${users}" var="user">
-                                <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.userName}</td>
-                                    <td>${user.email}</td>
-                                    <td>
-                                        <a href='<c:url value="/user/edit?id=${user.id}"/>'>Edit</a>
-                                        <a href='<c:url value="/user/delete?id=${user.id}"/>'>Delete</a>
-                                        <a href='<c:url value="/user/show?id=${user.id}"/>'>Pokaz</a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                        <h5>Dodaj użytkownika</h5></div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="userID">ID</label>
+                                <input type="number" class="form-control" name="id" placeholder="Enter email" id="userID" value="${user.id}">
+                            </div>
+                            <div class="form-group">
+                                <label for="userName">Nazwa użytkownika</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter user name" id="userName" value="${user.userName}">
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email address</label>
+                                <input type="email" class="form-control" name="email" placeholder="Enter email" id="userEmail" value="${user.email}">
+                            </div>
+                        </form>
                     </div>
-                </div>
                 </div>
 
 
