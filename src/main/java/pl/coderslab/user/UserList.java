@@ -20,10 +20,6 @@ public class UserList extends HttpServlet {
 
         request.setAttribute("users", users);
 
-        for (User user: users) {
-            response.getWriter().append("1");
-        }
-
         getServletContext().getRequestDispatcher("/users/list.jsp").forward(request, response);
 
     }

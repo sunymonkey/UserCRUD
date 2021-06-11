@@ -57,8 +57,26 @@
                             class="fas fa-download fa-sm text-white-50"></i> Lista użytkowników</a>
                 </div>
 
-                <div class="form">
-
+                <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-header-tabs">
+                        <h5>Dodaj użytkownika</h5></div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="userName">Nazwa użytkownika</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter user name" id="userName">
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email address</label>
+                                <input type="email" class="form-control" name="email" placeholder="Enter email" id="userEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordUser">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Enter password" id="passwordUser">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Zapisz</button>
+                        </form>
+                    </div>
                 </div>
 
 
